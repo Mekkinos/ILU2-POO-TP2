@@ -17,14 +17,14 @@ public class BoundaryAcheterProduit {
 		String produit = scan.next();
 		Gaulois[] gauloisVendeur = controlAcheterProduit.donnerInfosVendeur(produit);
 		if (gauloisVendeur==null) {
-			System.out.println("DÃ©solÃ©, personne ne vend ce produit au marchÃ©.\n");
+			System.out.println("Désolé, personne ne vend ce produit au marché.\n");
 		} else {
 			afficherListeVendeur(gauloisVendeur,produit);
 			String choixVendeur = scan.next();
 			String nomVendeur = gauloisVendeur[Integer.parseInt(choixVendeur)-1].getNom();
 			
 			StringBuilder chaine = new StringBuilder();
-			chaine.append(nomAcheteur + " se dÃ©place jusqu'Ã  l'Ã©tal du vendeur " + nomVendeur + ".\n");
+			chaine.append(nomAcheteur + " se déplace jusqu'à  l'étal du vendeur " + nomVendeur + ".\n");
 			chaine.append("Bonjour " + nomAcheteur + ".\n");
 			chaine.append("Combien de fleurs voulez-vous acheter?\n");
 			System.out.println(chaine.toString());
@@ -36,7 +36,7 @@ public class BoundaryAcheterProduit {
 	}
 	private void afficherListeVendeur(Gaulois[] gauloisVendeur,String produit) {
 		StringBuilder chaine = new StringBuilder();
-		chaine.append("Chez quel commerÃ§ant voulez-vous acheter des " + produit + "? \n");
+		chaine.append("Chez quel commerçant voulez-vous acheter des " + produit + "? \n");
 		if (gauloisVendeur != null) {
 			for (int i = 0; i < gauloisVendeur.length; i++) {
 				chaine.append((i+1) + " - " + gauloisVendeur[i].getNom() + "\n");
@@ -51,11 +51,11 @@ public class BoundaryAcheterProduit {
 		} else if (Integer.valueOf(nbrAchat) > nbrProduitDisponible) {
 			chaine.append(nomAcheteur + " veut acheter " + nbrAchat + " " + produit +  ", malheureusement " + nomVendeur 
 					+ " n'en a plus que " + nbrProduitDisponible + ".\n");
-			chaine.append(nomAcheteur + " achÃ¨te tout le stock de " + nomVendeur + ".\n");
+			chaine.append(nomAcheteur + " achète tout le stock de " + nomVendeur + ".\n");
 			int nbrProduitAcheter = controlAcheterProduit.acheterProduit(nomVendeur, Integer.valueOf(nbrAchat));
 		} else {
 			int nbrProduitAcheter = controlAcheterProduit.acheterProduit(nomVendeur, Integer.valueOf(nbrAchat));
-			chaine.append(nomAcheteur + " achÃ¨te " + nbrProduitAcheter + " " + produit + " Ã  " + nomVendeur);
+			chaine.append(nomAcheteur + " achète " + nbrProduitAcheter + " " + produit + " à  " + nomVendeur);
 		}
 		System.out.println(chaine.toString());
 	}

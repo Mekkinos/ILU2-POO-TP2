@@ -12,10 +12,10 @@ public class BoundaryEmmenager {
 	public void emmenager(String nomVisiteur) {
 		if (controlEmmenager.isHabitant(nomVisiteur)) {
 			System.out.println(
-					"Mais vous Ãªtes dÃ©jÃ  un habitant du village !");
+					"Mais vous êtes déjà  un habitant du village !");
 		} else {
 			StringBuilder question = new StringBuilder();
-			question.append("ÃŠtes-vous :\n");
+			question.append("êtes-vous :\n");
 			question.append("1 - un druide.\n");
 			question.append("2 - un gaulois.\n");
 			int choixUtilisateur = -1;
@@ -49,7 +49,7 @@ public class BoundaryEmmenager {
 			effetPotionMin = Clavier.entrerEntier("Quelle est la force de potion la plus faible que vous produisez?");
 			effetPotionMax = Clavier.entrerEntier("Quelle est la force de potion la plus forte que vous produisez?");
 			if (effetPotionMax < effetPotionMin) {
-				System.out.println("Atention Druide, vous vous Ãªtes trompÃ© entre le minimum et le maximum.\n");
+				System.out.println("Atention Druide, vous vous êtes trompé entre le minimum et le maximum.\n");
 			}
 		} while (effetPotionMax < effetPotionMin);
 		controlEmmenager.ajouterDruide(nomVisiteur, forceDruide, effetPotionMin, effetPotionMax);
