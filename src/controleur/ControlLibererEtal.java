@@ -29,7 +29,7 @@ public class ControlLibererEtal {
 			donneesEtal[0] = String.valueOf(false);
 			return donneesEtal;
 		}
-		String[] donneesEtal = null;
+		String[] donneesEtal = etal.etatEtal();
 		etal.libererEtal();
 		return donneesEtal;
 	}
